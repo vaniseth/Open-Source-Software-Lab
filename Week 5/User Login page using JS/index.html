@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function validateForm() {
-  let x = document.forms["myForm"]["fname"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
-</script>
-</head>
-<body>
-
-<h2>JavaScript Validation</h2>
-
-<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-  Name: <input type="text" name="fname">
-  <input type="submit" value="Submit">
-</form>
-
+    <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;  
+        
+        if (name==null || name==""){  
+        alert("Name can't be blank");  
+        return false;  
+        }else if(password.length<6){  
+        alert("Password must be at least 6 characters long.");  
+        return false;  
+        }  
+        }  
+    </script>  
+</head>    
+<body>  
+    <form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >  
+        Name: <input type="text" name="name"><br/>  
+        Password: <input type="password" name="password"><br/>  
+        <input type="submit" value="register">  
+    </form>
 </body>
 </html>
